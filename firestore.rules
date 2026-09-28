@@ -1,0 +1,12 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /teachers/{teacherId} {
+      // Public can read only approved listings.
+      allow read: if resource.data.approved == true;
+      // IMPORTANT: Replace this starter rule with secure, role-based rules before launch.
+      // Public profile submissions are intentionally not permitted by this rule.
+      allow create, update, delete: if false;
+    }
+  }
+}

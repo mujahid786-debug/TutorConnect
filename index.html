@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Find trusted tutors and teachers in Pakistan with TutorConnect.">
+  <title>TutorConnect — Find Your Teacher</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#home"><span class="brand-mark">T</span><span>Tutor<span class="brand-blue">Connect</span><small>FIND YOUR TEACHER</small></span></a>
+  <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+  <nav id="nav"><a href="#home">Home</a><a href="#find">Find a Teacher</a><a href="#register">Become a Teacher</a><a href="#about">About Us</a><a href="#contact">Contact</a><button class="btn btn-small" id="loginBtn">Teacher Login</button></nav>
+</header>
+<main>
+<section class="hero" id="home">
+  <div class="hero-copy"><span class="eyebrow">LEARN BETTER. GROW FASTER.</span><h1>Find the right teacher<br><span>for your future.</span></h1>
+    <p>Connect with available tutors and experienced teachers across Pakistan—online or in person.</p>
+    <a class="btn" href="#find">Find a Teacher <span>→</span></a>
+    <div class="trust"><div class="avatar-stack"><b>M</b><b>A</b><b>S</b></div><span><strong>Personalized learning</strong><br>Teachers for every learning goal</span></div>
+  </div>
+  <div class="hero-art"><div class="art-circle"></div><div class="art-card card-one">📚 <strong>Learn at your pace</strong><small>Find your perfect match</small></div><div class="art-card card-two"><span class="online-dot"></span><strong>Teacher available</strong><small>Online & home tuition</small></div><div class="book-emoji">🎓</div></div>
+</section>
+<section class="search-panel" id="find">
+  <div class="section-heading"><span class="eyebrow">START LEARNING</span><h2>Find your perfect tutor</h2><p>Choose what you need and explore teacher profiles.</p></div>
+  <form class="search-form" id="searchForm">
+    <label>Subject<input id="subjectSearch" placeholder="e.g. Mathematics"></label>
+    <label>City<input id="citySearch" placeholder="e.g. Lahore"></label>
+    <label>Class / Level<select id="classSearch"><option value="">Any class</option><option>Primary</option><option>Middle</option><option>Matric</option><option>Intermediate</option><option>O Level</option><option>A Level</option><option>University</option></select></label>
+    <label>Teaching mode<select id="modeSearch"><option value="">Any mode</option><option>Online</option><option>Home tuition</option><option>At institute</option></select></label>
+    <button class="btn" type="submit">Search</button>
+  </form>
+</section>
+<section class="teachers-section">
+  <div class="section-heading split"><div><span class="eyebrow">MEET OUR EDUCATORS</span><h2>Teachers ready to help</h2><p id="resultCount">Explore tutor profiles and find your match.</p></div><button class="text-btn" id="clearFilters">Clear filters ↗</button></div>
+  <div class="teacher-grid" id="teacherGrid"></div>
+  <p class="empty-state hidden" id="emptyState">No teachers match these filters yet. Try changing your search or register as a teacher.</p>
+</section>
+<section class="register-section" id="register">
+  <div class="register-copy"><span class="eyebrow">SHARE YOUR KNOWLEDGE</span><h2>Are you a teacher?</h2><p>Join TutorConnect and help students reach their goals. Create a profile and let learners find you.</p><ul><li>✓ Showcase your experience and subjects</li><li>✓ Set your own fee and availability</li><li>✓ Connect directly with students</li></ul></div>
+  <form class="teacher-form panel" id="teacherForm">
+    <h3>Create your teacher profile</h3><p class="muted">Fields marked * are required.</p>
+    <div class="form-grid">
+      <label>Full name *<input name="name" required placeholder="Your full name"></label>
+      <label>Email *<input name="email" type="email" required placeholder="you@example.com"></label>
+      <label>Qualification *<input name="qualification" required placeholder="e.g. MSc Mathematics"></label>
+      <label>Experience (years) *<input name="experience" type="number" min="0" required placeholder="e.g. 5"></label>
+      <label>Subjects *<input name="subjects" required placeholder="Math, Physics"></label>
+      <label>City *<input name="city" required placeholder="e.g. Lahore"></label>
+      <label>Teaching mode *<select name="mode" required><option value="">Select mode</option><option>Online</option><option>Home tuition</option><option>At institute</option><option>Online, Home tuition</option></select></label>
+      <label>Class levels *<input name="levels" required placeholder="Matric, Intermediate"></label>
+      <label>Fee (PKR per hour) *<input name="fee" type="number" min="0" required placeholder="e.g. 1500"></label>
+      <label>Availability *<input name="availability" required placeholder="Weekdays evenings"></label>
+      <label class="full">Short introduction<textarea name="bio" rows="3" placeholder="Tell students about your teaching approach..."></textarea></label>
+      <label class="full">WhatsApp number *<input name="phone" required placeholder="923001234567"></label>
+    </div>
+    <button class="btn" type="submit">Submit for approval →</button>
+    <p class="form-note" id="formNote" role="status">Profiles submitted here are saved in this browser demo. Connect Firebase for shared, secure listings.</p>
+  </form>
+</section>
+<section class="info-grid" id="about">
+  <div><span class="eyebrow">ABOUT TUTORCONNECT</span><h2>Education that fits your life.</h2></div>
+  <p>We make it easier for students and families in Pakistan to discover teachers by subject, city, level, and teaching mode. TutorConnect helps learners connect directly with educators and find support that fits their needs.</p>
+</section>
+<section class="contact-section" id="contact"><div><span class="eyebrow">WE’RE HERE TO HELP</span><h2>Let’s get you learning.</h2><p>Questions about a profile or joining as a teacher?</p></div><a class="btn" href="mailto:hello@tutorconnect.example">Email us →</a></section>
+</main>
+<footer><a class="brand footer-brand" href="#home"><span class="brand-mark">T</span><span>Tutor<span class="brand-blue">Connect</span><small>FIND YOUR TEACHER</small></span></a><span>© <span id="year"></span> TutorConnect. Built for learners in Pakistan.</span><a href="#home">Back to top ↑</a></footer>
+<dialog id="loginDialog"><form method="dialog" class="dialog-box"><button class="dialog-close" aria-label="Close">×</button><span class="eyebrow">TEACHER PORTAL</span><h2>Teacher login</h2><p>Firebase Authentication setup is required for secure accounts and a private dashboard.</p><label>Email<input type="email" id="loginEmail" placeholder="you@example.com"></label><label>Password<input type="password" id="loginPassword" placeholder="Password"></label><button class="btn" id="loginSubmit" type="button">Sign in</button><p id="loginMessage" class="form-note">Add your Firebase project settings in <code>firebase-config.js</code> to enable sign-in.</p></form></dialog>
+<script type="module" src="app.js"></script>
+</body></html>
